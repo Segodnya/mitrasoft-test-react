@@ -16,9 +16,9 @@ const reducers = (state = initialState, action) => {
       return {
         ...state,
         loading: true,
-        error: null,
       };
     case FETCH_POSTS_SUCCESS:
+      console.log("FETCH_POSTS_SUCCESS action dispatched");
       return {
         ...state,
         posts: action.payload,

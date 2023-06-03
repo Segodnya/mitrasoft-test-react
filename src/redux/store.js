@@ -6,6 +6,7 @@ import { watchFetchPosts } from "./sagas";
 const sagaMiddleware = createSagaMiddleware();
 
 const store = createStore(rootReducer, applyMiddleware(sagaMiddleware));
+console.log("store created");
 
 sagaMiddleware.run(watchFetchPosts);
 
