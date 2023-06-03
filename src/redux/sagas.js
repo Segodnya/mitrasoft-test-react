@@ -30,6 +30,7 @@ export function* watchFetchPosts() {
 
 function* fetchComments(action) {
   try {
+    yield new Promise((resolve) => setTimeout(resolve, 500));
     const response = yield call(
       axios.get,
       `https://jsonplaceholder.typicode.com/posts/${action.payload}/comments`
