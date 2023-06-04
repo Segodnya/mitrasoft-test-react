@@ -61,7 +61,7 @@ const PostList = () => {
                 <ListGroup.Item key={post.id}>
                   <h5>{post.title}</h5>
                   <p>{post.body}</p>
-                  <Link to={`/users/${post.userId}`}>
+                  <Link to={`/mitrasoft-test-react/users/${post.userId}`}>
                     <Image
                       src={avatar}
                       roundedCircle

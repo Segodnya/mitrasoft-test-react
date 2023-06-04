@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 function About() {
   const navigate = useNavigate();
   const handleBack = () => {
-    navigate("/");
+    navigate("/mitrasoft-test-react");
   };
   return (
     <Card style={{ width: "300px", margin: "0 auto" }}>

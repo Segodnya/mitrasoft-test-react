@@ -16,7 +16,7 @@ const UserProfile = () => {
   const isLoading = useSelector((state) => state.loading);
 
   const handleBack = () => {
-    navigate("/");
+    navigate("/mitrasoft-test-react");
   };
 
   useEffect(() => {

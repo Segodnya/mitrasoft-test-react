@@ -74,7 +74,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 8. Верстка выглядит хорошо для маленьких и больших экранов устройств.
 
-Github Pages: ...
+Github Pages: https://segodnya.github.io/mitrasoft-test-react/
 
 ## Available Scripts
 

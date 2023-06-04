@@ -12,10 +12,10 @@ function Header() {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link as={Link} to="/">
+          <Nav.Link as={Link} to="/mitrasoft-test-react">
             Posts
           </Nav.Link>
-          <Nav.Link as={Link} to="/about">
+          <Nav.Link as={Link} to="/mitrasoft-test-react/about">
             About
           </Nav.Link>
         </Nav>

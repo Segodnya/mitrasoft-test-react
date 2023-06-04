@@ -10,9 +10,12 @@ function App() {
     <div className="App">
       <Header />
       <Routes>
-        <Route exact path="/" element={<PostList />} />
-        <Route exact path="/about" element={<About />} />
-        <Route path="/users/:userId" element={<UserProfile />} />
+        <Route exact path="/mitrasoft-test-react" element={<PostList />} />
+        <Route exact path="/mitrasoft-test-react/about" element={<About />} />
+        <Route
+          path="/mitrasoft-test-react/users/:userId"
+          element={<UserProfile />}
+        />
       </Routes>
     </div>
   );
