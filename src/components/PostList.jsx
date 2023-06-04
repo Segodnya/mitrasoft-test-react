@@ -8,6 +8,7 @@ import MySpinner from "./MySpinner";
 import MyPagination from "./MyPagination";
 import Comments from "./Comments";
 import avatar from "../assets/avatar.png";
+import Sort from "./Sort";
 
 const PostList = () => {
   const dispatch = useDispatch();
@@ -16,6 +17,7 @@ const PostList = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(5);
   const [searchTerm, setSearchTerm] = useState("");
+  const [sortOption, setSortOption] = useState("id");
 
   useEffect(() => {
     dispatch(fetchPostsRequest());
@@ -35,6 +37,9 @@ const PostList = () => {
         setSearchTerm={setSearchTerm}
         setCurrentPage={setCurrentPage}
       />
+
+      <Sort sortOption={sortOption} setSortOption={setSortOption} />
+
       {isLoading ? (
         <MySpinner />
       ) : (
@@ -44,6 +49,14 @@ const PostList = () => {
               .filter((post) =>
                 post.title.toLowerCase().includes(searchTerm.toLowerCase())
               )
+              // eslint-disable-next-line array-callback-return
+              .sort((a, b) => {
+                if (sortOption === "id") {
+                  return a.id - b.id;
+                } else if (sortOption === "title") {
+                  return a.title.localeCompare(b.title);
+                }
+              })
               .slice(indexOfFirstPost, indexOfLastPost)
               .map((post) => (
                 <ListGroup.Item key={post.id}>

@@ -12,11 +12,7 @@ const MyPagination = ({ currentPage, totalPages, onPageChange }) => {
     <Pagination>
       <Pagination.First onClick={() => onPageChange(1)} />
       <Pagination.Prev onClick={() => onPageChange(currentPage - 1)} />
-      <Pagination.Item active>{currentPage}</Pagination.Item>
-      <Pagination.Ellipsis />
-      <Pagination.Item onClick={() => onPageChange(totalPages)}>
-        {totalPages}
-      </Pagination.Item>
+      <>{`Page ${currentPage} of ${totalPages}`}</>
       <Pagination.Next onClick={() => onPageChange(currentPage + 1)} />
       <Pagination.Last onClick={() => onPageChange(totalPages)} />
     </Pagination>
