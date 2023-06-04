@@ -38,12 +38,11 @@ const PostList = () => {
         setCurrentPage={setCurrentPage}
       />
 
-      <Sort sortOption={sortOption} setSortOption={setSortOption} />
-
       {isLoading ? (
         <MySpinner />
       ) : (
         <>
+          <Sort sortOption={sortOption} setSortOption={setSortOption} />
           <ListGroup>
             {posts
               .filter((post) =>
