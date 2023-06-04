@@ -1,35 +1,37 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Button, Card } from "react-bootstrap";
 import avatar from "../assets/avatar.png";
 import { useSelector } from "react-redux";
 import { ListGroup } from "react-bootstrap";
 import MySpinner from "./MySpinner";
+import { useDispatch } from "react-redux";
+import { fetchPostsRequest } from "../redux/actions";
 
 const UserProfile = () => {
+  const dispatch = useDispatch();
   const { userId } = useParams();
   const navigate = useNavigate();
   const posts = useSelector((state) => state.posts);
   const isLoading = useSelector((state) => state.loading);
-  const [userPosts, setUserPosts] = useState([]);
 
   const handleBack = () => {
     navigate("/");
   };
 
   useEffect(() => {
-    setUserPosts(posts.filter((post) => post.userId === parseInt(userId)));
-  }, [posts, userId]);
+    dispatch(fetchPostsRequest());
+  }, [dispatch]);
 
   return (
     <div>
-      <Button variant="outline-primary" onClick={handleBack}>
-        Back
-      </Button>
       {isLoading ? (
         <MySpinner />
       ) : (
         <>
+          <Button variant="outline-primary" onClick={handleBack}>
+            Back
+          </Button>
           <Card>
             <Card.Img
               variant="top"
@@ -41,12 +43,14 @@ const UserProfile = () => {
           </Card>
 
           <ListGroup>
-            {userPosts.map((post) => (
-              <ListGroup.Item key={post.id}>
-                <h5>{post.title}</h5>
-                <p>{post.body}</p>
-              </ListGroup.Item>
-            ))}
+            {posts
+              .filter((post) => post.userId === parseInt(userId))
+              .map((post) => (
+                <ListGroup.Item key={post.id}>
+                  <h5>{post.title}</h5>
+                  <p>{post.body}</p>
+                </ListGroup.Item>
+              ))}
           </ListGroup>
         </>
       )}
