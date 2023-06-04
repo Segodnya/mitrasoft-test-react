@@ -6,7 +6,7 @@ import avatar from "../assets/2023-06-04 12.51.52.jpg";
 function Header() {
   return (
     <Navbar bg="light" expand="lg">
-      <Navbar.Brand as={Link} to="/">
+      <Navbar.Brand as={Link} to="/mitrasoft-test-react">
         Посты и комментарии
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
