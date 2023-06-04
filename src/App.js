@@ -2,7 +2,7 @@ import "./App.css";
 import PostList from "./components/PostList";
 import About from "./components/About";
 import UserProfile from "./components/UserProfile";
-import { BrowserRouter as Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
