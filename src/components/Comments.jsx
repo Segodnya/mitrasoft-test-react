@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchCommentsRequest } from "../redux/actions";
-import { Button } from "react-bootstrap";
+import { Button, ListGroup } from "react-bootstrap";
 import MySpinner from "./MySpinner";
 
 const Comments = ({ postId }) => {
@@ -39,15 +39,15 @@ const Comments = ({ postId }) => {
             <div>Error: {comments[postId].error}</div>
           ) : (
             <>
-              <h6>Comments:</h6>
-              <ul>
+              <h3>Comments:</h3>
+              <ListGroup>
                 {comments[postId]?.data?.map((comment) => (
-                  <li key={comment.id}>
-                    <h3>{comment.email}</h3>
+                  <ListGroup.Item key={comment.id}>
+                    <h6>{comment.email}</h6>
                     <p>{comment.body}</p>
-                  </li>
+                  </ListGroup.Item>
                 ))}
-              </ul>
+              </ListGroup>
             </>
           )}
         </div>

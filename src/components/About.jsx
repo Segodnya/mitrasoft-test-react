@@ -9,8 +9,19 @@ function About() {
     navigate("/mitrasoft-test-react");
   };
   return (
-    <Card style={{ width: "300px", margin: "0 auto" }}>
-      <Card.Img variant="top" src={photo} />
+    <Card
+      style={{ width: "calc(100%-20px)", display: "flex", margin: "0 auto" }}
+    >
+      <Card.Img
+        variant="top"
+        src={photo}
+        style={{
+          width: "96px",
+          height: "96px",
+          margin: "32px 0 0 32px",
+          borderRadius: "50%",
+        }}
+      />
       <Card.Body>
         <Card.Title>Об авторе</Card.Title>
         <Card.Body>

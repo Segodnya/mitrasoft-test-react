@@ -9,7 +9,14 @@ const MyPagination = ({ currentPage, totalPages, onPageChange }) => {
   }
 
   return (
-    <Pagination>
+    <Pagination
+      style={{
+        padding: "10px 0",
+        justifyContent: "center",
+        alignItems: "center",
+        gap: "10px",
+      }}
+    >
       <Pagination.First onClick={() => onPageChange(1)} />
       <Pagination.Prev onClick={() => onPageChange(currentPage - 1)} />
       <>{`Page ${currentPage} of ${totalPages}`}</>

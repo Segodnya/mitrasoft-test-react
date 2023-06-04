@@ -59,8 +59,6 @@ const PostList = () => {
               .slice(indexOfFirstPost, indexOfLastPost)
               .map((post) => (
                 <ListGroup.Item key={post.id}>
-                  <h5>{post.title}</h5>
-                  <p>{post.body}</p>
                   <Link to={`/mitrasoft-test-react/users/${post.userId}`}>
                     <Image
                       src={avatar}
@@ -73,6 +71,8 @@ const PostList = () => {
                       }}
                     />
                   </Link>
+                  <h5>{post.title}</h5>
+                  <p>{post.body}</p>
                   <Comments postId={post.id} />
                 </ListGroup.Item>
               ))}
